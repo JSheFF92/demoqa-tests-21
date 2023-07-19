@@ -26,10 +26,10 @@ public class TextBoxTests {
         $("#permanentAddress").setValue("Another address 1");
         $("#submit").click();
 
-//        $("#output").$("#name").shouldHave(text("Alex Egorov"));
-        $("#output #name").shouldHave(text("Alex Egorov"));
-        $("#output #email").shouldHave(text("alex@egorov.com"));
-        $("#output #currentAddress").shouldHave(text("Some address 1"));
-        $("#output #permanentAddress").shouldHave(text("Another address 1"));
+//        $("").$("#name").shouldHave(text("Alex Egorov"));
+        $(" #name").shouldHave(text("Alex Egorov"));
+        $(" #email").shouldHave(text("alex@egorov.com"));
+        $(" #currentAddress").shouldHave(text("Some address 1"));
+        $(" #permanentAddress").shouldHave(text("Another address 1"));
     }
 }

@@ -3,6 +3,7 @@ import com.codeborne.selenide.Configuration;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import static com.codeborne.selenide.Condition.appear;
 
 import java.nio.file.Path;
 import java.util.Optional;
@@ -15,37 +16,51 @@ public class PracticeFormTest {
 
     @BeforeAll
     static void beforeAll() {
-        Optional<Path> browserPath =  WebDriverManager.chromedriver() .getBrowserPath();
-        System.out.println("#### PATH: " +((Optional<?>) browserPath).get());
+//        Optional<Path> browserPath =  WebDriverManager.chromedriver() .getBrowserPath();
+//        System.out.println("#### PATH: " +((Optional<?>) browserPath).get());
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
+        Configuration.pageLoadStrategy="eager";
     }
     @Test
     void fillFormTest() {
-        Configuration.pageLoadStrategy="eager";
         open("/automation-practice-form");
-//        $("#firstName").setValue("Evgenyi");
-//        $("#lastName").setValue("Shevchuk");
-//        $("#userEmail").setValue("Evgenyi@Shevchuk.com");
-//        $("#genterWrapper").$(byText("Other")).click();
-//        $("#userNumber").setValue("8(666)7778889");
-//        $("#dateOfBirthInput").click();
-//        $(".react-datepicker__year-select").$(byText("1992")).click();
-//        $(".react-datepicker__month-select").$(byText("September")).click();
-//        $("div.react-datepicker__week div.react-datepicker__day--029").click();
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
+
+        $("#firstName").setValue("Evgenyi");
+        $("#lastName").setValue("Shevchuk");
+        $("#userEmail").setValue("Evgenyi@Shevchuk.com");
+        $("#genterWrapper").$(byText("Female")).click();
+        $("#userNumber").setValue("8905784381");
+
+        $("#dateOfBirthInput").click();
+        $(".react-datepicker__year-select").$(byText("1992")).click();
+        $(".react-datepicker__month-select").$(byText("September")).click();
+        $("div.react-datepicker__week div.react-datepicker__day--029").click();
+
+        $("#hobbiesWrapper").$(byText("Sports")).click();
+        $("#uploadPicture").sendKeys("/Users/evgenyi/IdeaProjects/demoqa-tests-21/src/resources/images.jpeg");
+        $("#currentAddress").setValue("Protvino");
+        $("input#subjectsInput").setValue("Maths").pressEnter();
+
         $("#state").click();
-        $("#currentAddress").setValue("1");
-//        $("#subjectsContainer").setValue("1");
+        $("#stateCity-wrapper div#react-select-3-option-0").click();
+        $("#city").click();
+        $("#city div#react-select-4-option-1").click();
+        $("#submit").click();
 
-//        $("#hobbiesWrapper").$(byText("Sports")).click();
-        Configuration.timeout = 10;
 
-//        $("#submit").click();
+        $(".table-responsive").shouldHave(text("Evgenyi Shevchuk"));
+        $(".table-responsive").shouldHave(text("Evgenyi@Shevchuk.com"));
+        $(".table-responsive").shouldHave(text("Female"));
+        $(".table-responsive").shouldHave(text("8905784381"));
+        $(".table-responsive").shouldHave(text("29 September,1992"));
+        $(".table-responsive").shouldHave(text("Maths"));
+        $(".table-responsive").shouldHave(text("images.jpeg"));
+        $(".table-responsive").shouldHave(text("Protvino"));
+        $(".table-responsive").shouldHave(text("NCR Gurgaon"));
 
-//        $("#output").$("#name").shouldHave(text("Alex Egorov"));
-//        $("#output #firstName").shouldHave(text("Alex"));
-//        $("#output #lastName").shouldHave(text("Egorov"));
-//        $("#output #email").shouldHave(text("alex@egorov.com"));
-//        $("#output #Number").shouldHave(text("8(666)7778889"));
+        $("#closeLargeModal").click();
     }
 }
