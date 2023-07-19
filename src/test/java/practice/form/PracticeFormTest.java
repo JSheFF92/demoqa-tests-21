@@ -1,12 +1,11 @@
 package practice.form;
+
 import com.codeborne.selenide.Configuration;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import static com.codeborne.selenide.Condition.appear;
 
-import java.nio.file.Path;
-import java.util.Optional;
+
+import java.io.File;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -16,12 +15,11 @@ public class PracticeFormTest {
 
     @BeforeAll
     static void beforeAll() {
-//        Optional<Path> browserPath =  WebDriverManager.chromedriver() .getBrowserPath();
-//        System.out.println("#### PATH: " +((Optional<?>) browserPath).get());
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
-        Configuration.pageLoadStrategy="eager";
+        Configuration.pageLoadStrategy = "eager";
     }
+
     @Test
     void fillFormTest() {
         open("/automation-practice-form");
@@ -40,7 +38,7 @@ public class PracticeFormTest {
         $("div.react-datepicker__week div.react-datepicker__day--029").click();
 
         $("#hobbiesWrapper").$(byText("Sports")).click();
-        $("#uploadPicture").sendKeys("/Users/evgenyi/IdeaProjects/demoqa-tests-21/src/resources/images.jpeg");
+        $("#uploadPicture").uploadFile(new File("src/resources/images.jpeg"));
         $("#currentAddress").setValue("Protvino");
         $("input#subjectsInput").setValue("Maths").pressEnter();
 
