@@ -18,15 +18,13 @@ public class TextBoxTests {
 
     @Test
     void fillFormTest() {
-        Configuration.pageLoadStrategy="eager";
+        Configuration.pageLoadStrategy = "eager";
         open("/text-box");
         $("#userName").setValue("Alex Egorov");
         $("#userEmail").setValue("alex@egorov.com");
         $("#currentAddress").setValue("Some address 1");
         $("#permanentAddress").setValue("Another address 1");
         $("#submit").click();
-
-//        $("").$("#name").shouldHave(text("Alex Egorov"));
         $(" #name").shouldHave(text("Alex Egorov"));
         $(" #email").shouldHave(text("alex@egorov.com"));
         $(" #currentAddress").shouldHave(text("Some address 1"));
