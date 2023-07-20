@@ -37,7 +37,7 @@ public class PracticeFormTest {
         $("div.react-datepicker__week div.react-datepicker__day--029").click();
 
         $("#hobbiesWrapper").$(byText("Sports")).click();
-        $("#uploadPicture").uploadFile(new File("src/resources/images.jpeg"));
+        $("#uploadPicture").uploadFromClasspath("images.jpeg");
         $("#currentAddress").setValue("Protvino");
         $("input#subjectsInput").setValue("Maths").pressEnter();
 
