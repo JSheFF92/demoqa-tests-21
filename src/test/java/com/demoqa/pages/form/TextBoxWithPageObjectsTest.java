@@ -3,9 +3,6 @@ package com.demoqa.pages.form;
 import com.demoqa.pages.TextBoxRegistrationPage;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
 
 public class TextBoxWithPageObjectsTest extends TestBase {
 
@@ -15,6 +12,7 @@ public class TextBoxWithPageObjectsTest extends TestBase {
     void fillFormTest() {
         TextBox
                 .openPage()
+                .settingsBoxPage()
                 .setFulltName("Evgenyi Sheff")
                 .setEmailInput("Sheff@evgenyi.com")
                 .setCurrentAddress("Sheff guru 7")

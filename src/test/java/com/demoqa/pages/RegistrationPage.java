@@ -28,7 +28,7 @@ public class RegistrationPage {
             addFormSubmit = $("#submit"),
             thanksText = $("#example-modal-sizes-title-lg"),
             tableResponsive = $(".table-responsive"),
-            closeLargModal = $("#closeLargeModal");
+            closeLargeModal = $("#closeLargeModal");
 
 
 
@@ -36,11 +36,17 @@ public class RegistrationPage {
     public RegistrationPage openPage() {
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
+
+        return this;
+    }
+
+    public RegistrationPage settingsRegistrationPage() {
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
 
         return this;
     }
+
 
     public RegistrationPage setFirstName(String value) {
         firstNameInput.setValue(value);
@@ -137,7 +143,7 @@ public class RegistrationPage {
     }
 
     public RegistrationPage closeModal() {
-        closeLargModal.click();
+        closeLargeModal.click();
 
         return this;
     }

@@ -3,15 +3,13 @@ package com.demoqa.pages.form;
 import com.demoqa.pages.RegistrationPage;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.*;
-
 public class RegistrationWithPageObjectsTest extends TestBase{
 
     RegistrationPage registrationPage = new RegistrationPage();
     @Test
     void fillFormTest() {
         registrationPage.openPage()
+                .settingsRegistrationPage()
                 .setFirstName("Evgenyi")
                 .setLastName("Shevchuk")
                 .setUserEmail("Evgenyi@Shevchuk.com")

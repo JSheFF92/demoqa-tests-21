@@ -21,12 +21,16 @@ public class TextBoxRegistrationPage {
 
     public TextBoxRegistrationPage openPage() {
         open("/text-box");
+
+        return this;
+    }
+
+    public TextBoxRegistrationPage settingsBoxPage() {
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
 
         return this;
     }
-
 
     public TextBoxRegistrationPage setFulltName(String value) {
         fullNameInput.setValue(value);
