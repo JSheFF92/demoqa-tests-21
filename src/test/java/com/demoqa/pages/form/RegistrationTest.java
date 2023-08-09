@@ -6,7 +6,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class PracticeFormTest extends TestBase{
+public class RegistrationTest extends TestBase {
 
     @Test
     void fillFormTest() {

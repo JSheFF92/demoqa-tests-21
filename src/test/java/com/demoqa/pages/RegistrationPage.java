@@ -21,16 +21,14 @@ public class RegistrationPage {
             uploadPicture = $("#uploadPicture"),
             currentAddressInput = $("#currentAddress"),
             subjectsInput = $("input#subjectsInput"),
-            clickState = $("#state"),
-            choiceState = $("#stateCity-wrapper div#react-select-3-option-0"),
-            clickCity = $("#city"),
-            choiceCity = $("#city div#react-select-4-option-1"),
+            state = $("#stateCity-wrapper #state"),
+            stateInput = $("#state"),
+            city = $("#stateCity-wrapper #city"),
+            cityInput = $("#city"),
             addFormSubmit = $("#submit"),
             thanksText = $("#example-modal-sizes-title-lg"),
             tableResponsive = $(".table-responsive"),
             closeLargeModal = $("#closeLargeModal");
-
-
 
 
     public RegistrationPage openPage() {
@@ -109,17 +107,16 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage choiceState() {
-        clickState.click();
-        choiceState.click();
+    public RegistrationPage choiceState(String value) {
+        state.click();
+        stateInput.$(byText(value)).click();
 
         return this;
     }
 
-    public RegistrationPage choiceCity() {
-        clickCity.click();
-        choiceCity.click();
-
+    public RegistrationPage choiceCity(String value) {
+        city.click();
+        cityInput.$(byText(value)).click();
 
         return this;
     }

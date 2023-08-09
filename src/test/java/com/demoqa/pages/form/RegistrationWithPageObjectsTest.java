@@ -20,8 +20,8 @@ public class RegistrationWithPageObjectsTest extends TestBase{
                 .setUploadPicture("images.jpeg")
                 .setCurrentAddress("Protvino")
                 .setSubjectsInput("Maths")
-                .choiceState()
-                .choiceCity()
+                .choiceState("NCR")
+                .choiceCity("Gurgaon")
                 .clickSubmit()
 
 
