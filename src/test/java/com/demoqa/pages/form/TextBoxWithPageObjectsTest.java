@@ -1,8 +1,7 @@
 package com.demoqa.pages.form;
 
-import com.demoqa.pages.TextBoxRegistrationPage;
+import com.demoqa.pages.pages.TextBoxRegistrationPage;
 import org.junit.jupiter.api.Test;
-
 
 public class TextBoxWithPageObjectsTest extends TestBase {
 
@@ -13,7 +12,7 @@ public class TextBoxWithPageObjectsTest extends TestBase {
         TextBox
                 .openPage()
                 .settingsBoxPage()
-                .setFulltName("Evgenyi Sheff")
+                .setFullName("Evgenyi Sheff")
                 .setEmailInput("Sheff@evgenyi.com")
                 .setCurrentAddress("Sheff guru 7")
                 .setPermanentAddress("Evgenyi guru 20k2")

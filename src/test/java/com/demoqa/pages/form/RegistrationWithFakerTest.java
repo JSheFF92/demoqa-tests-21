@@ -1,6 +1,6 @@
 package com.demoqa.pages.form;
 
-import com.demoqa.pages.RegistrationPage;
+import com.demoqa.pages.pages.RegistrationPage;
 import org.junit.jupiter.api.Test;
 
 import static com.demoqa.pages.utils.TestDataParam.*;
@@ -29,6 +29,7 @@ public class RegistrationWithFakerTest extends TestBase {
                 .clickSubmit()
 
                 .thxForm("Thanks for submitting the form");
+
         registrationPage
                 .checkResult(firstName + " " + lastName)
                 .checkResult(email)

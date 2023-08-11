@@ -1,11 +1,12 @@
 package com.demoqa.pages.form;
 
-import com.demoqa.pages.RegistrationPage;
+import com.demoqa.pages.pages.RegistrationPage;
 import org.junit.jupiter.api.Test;
 
 public class RegistrationWithPageObjectsTest extends TestBase{
 
     RegistrationPage registrationPage = new RegistrationPage();
+
     @Test
     void fillFormTest() {
         registrationPage.openPage()
@@ -23,9 +24,8 @@ public class RegistrationWithPageObjectsTest extends TestBase{
                 .choiceState("NCR")
                 .choiceCity("Gurgaon")
                 .clickSubmit()
-
-
                 .thxForm("Thanks for submitting the form");
+
         registrationPage
                 .checkResult("Evgenyi")
                 .checkResult("Shevchuk")
@@ -37,7 +37,6 @@ public class RegistrationWithPageObjectsTest extends TestBase{
                 .checkResult("images.jpeg")
                 .checkResult("Protvino")
                 .checkResult("NCR Gurgaon")
-
                 .closeModal();
     }
 }

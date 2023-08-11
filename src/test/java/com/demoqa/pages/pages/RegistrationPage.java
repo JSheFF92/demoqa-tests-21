@@ -1,7 +1,7 @@
-package com.demoqa.pages;
+package com.demoqa.pages.pages;
 
 import com.codeborne.selenide.SelenideElement;
-import com.demoqa.pages.components.CalendarComponent;
+import com.demoqa.pages.pages.components.CalendarComponent;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -9,7 +9,9 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 public class RegistrationPage {
+
     CalendarComponent calendar = new CalendarComponent();
+
     SelenideElement
             firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
@@ -21,15 +23,14 @@ public class RegistrationPage {
             uploadPicture = $("#uploadPicture"),
             currentAddressInput = $("#currentAddress"),
             subjectsInput = $("input#subjectsInput"),
-            state = $("#stateCity-wrapper #state"),
+            stateWrapper = $("#stateCity-wrapper #state"),
             stateInput = $("#state"),
-            city = $("#stateCity-wrapper #city"),
+            cityWrapper = $("#stateCity-wrapper #city"),
             cityInput = $("#city"),
             addFormSubmit = $("#submit"),
             thanksText = $("#example-modal-sizes-title-lg"),
             tableResponsive = $(".table-responsive"),
             closeLargeModal = $("#closeLargeModal");
-
 
     public RegistrationPage openPage() {
         open("/automation-practice-form");
@@ -44,7 +45,6 @@ public class RegistrationPage {
 
         return this;
     }
-
 
     public RegistrationPage setFirstName(String value) {
         firstNameInput.setValue(value);
@@ -108,14 +108,14 @@ public class RegistrationPage {
     }
 
     public RegistrationPage choiceState(String value) {
-        state.click();
+        stateWrapper.click();
         stateInput.$(byText(value)).click();
 
         return this;
     }
 
     public RegistrationPage choiceCity(String value) {
-        city.click();
+        cityWrapper.click();
         cityInput.$(byText(value)).click();
 
         return this;
@@ -127,10 +127,8 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage thxForm(String value) {
+    public void thxForm(String value) {
         thanksText.shouldHave(text(value));
-
-        return this;
     }
 
     public RegistrationPage checkResult(String value) {
@@ -139,9 +137,7 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage closeModal() {
+    public void closeModal() {
         closeLargeModal.click();
-
-        return this;
     }
 }

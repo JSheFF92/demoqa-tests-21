@@ -46,7 +46,6 @@ public class RegistrationTest extends TestBase {
         $(".table-responsive").shouldHave(text("images.jpeg"));
         $(".table-responsive").shouldHave(text("Protvino"));
         $(".table-responsive").shouldHave(text("NCR Gurgaon"));
-
         $("#closeLargeModal").click();
     }
 }

@@ -1,4 +1,4 @@
-package com.demoqa.pages;
+package com.demoqa.pages.pages;
 
 import com.codeborne.selenide.SelenideElement;
 
@@ -6,18 +6,18 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
 public class TextBoxRegistrationPage {
+
     SelenideElement
-            fullNameInput = $("#userName"),
-            userEmailInput = $("#userEmail"),
+            inputFullName = $("#userName"),
+            inputUserEmail = $("#userEmail"),
             currentAddressInput = $("#currentAddress"),
             permanentAddressInput = $("#permanentAddress"),
             addFormSubmit = $("#submit"),
 
-    outputName = $("#output #name"),
+            outputName = $("#output #name"),
             outputEmail = $("#output #email"),
             outputCurrentAddress = $("#output #currentAddress"),
             outputPermanentAddress = $("#output #permanentAddress");
-
 
     public TextBoxRegistrationPage openPage() {
         open("/text-box");
@@ -32,18 +32,17 @@ public class TextBoxRegistrationPage {
         return this;
     }
 
-    public TextBoxRegistrationPage setFulltName(String value) {
-        fullNameInput.setValue(value);
+    public TextBoxRegistrationPage setFullName(String value) {
+        inputFullName.setValue(value);
 
         return this;
     }
 
     public TextBoxRegistrationPage setEmailInput(String value) {
-        userEmailInput.setValue(value);
+        inputUserEmail.setValue(value);
 
         return this;
     }
-
 
     public TextBoxRegistrationPage setCurrentAddress(String value) {
         currentAddressInput.setValue(value);
@@ -57,13 +56,11 @@ public class TextBoxRegistrationPage {
         return this;
     }
 
-
     public TextBoxRegistrationPage clickSubmit() {
         addFormSubmit.click();
 
         return this;
     }
-
 
     public TextBoxRegistrationPage checkName(String value) {
         outputName.shouldHave(text(value));
@@ -83,10 +80,7 @@ public class TextBoxRegistrationPage {
         return this;
     }
 
-    public TextBoxRegistrationPage checkPermanentAddress(String value) {
+    public void checkPermanentAddress(String value) {
         outputPermanentAddress.shouldHave(text(value));
-
-        return this;
     }
-
 }
