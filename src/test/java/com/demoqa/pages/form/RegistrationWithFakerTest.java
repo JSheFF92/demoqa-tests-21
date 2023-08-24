@@ -1,6 +1,7 @@
 package com.demoqa.pages.form;
 
 import com.demoqa.pages.pages.RegistrationPage;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.demoqa.pages.utils.TestDataParam.*;
@@ -10,6 +11,7 @@ public class RegistrationWithFakerTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
 
     @Test
+    @DisplayName("Тестирование формы регистрации")
     void fillFormTest() {
         registrationPage
                 .openPage()
