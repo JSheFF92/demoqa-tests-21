@@ -10,7 +10,7 @@ repositories {
 def allureVersion = "2.23.0"
 
 allure {
-    report{
+    report {
         version.set(allureVersion)
     }
     adapter {
@@ -45,7 +45,7 @@ test {
         useJUnitPlatform()
 }
 
-task simple_test(type: Test){
+task simple_test(type: Test) {
     useJUnitPlatform{
         includeTags("simple")
     }
