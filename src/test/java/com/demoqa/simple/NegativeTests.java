@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @Tag("simple")
 public class NegativeTests {
 
+
     @Test
     void someTest() {
         assertTrue(false);
