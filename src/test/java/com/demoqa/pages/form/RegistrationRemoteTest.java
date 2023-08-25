@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import static com.demoqa.pages.utils.TestDataParam.*;
 
 @Tag("remote")
-public class RegistrationRemoteTest extends TestBase {
+public class RegistrationRemoteTest extends RemoteTestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
 
