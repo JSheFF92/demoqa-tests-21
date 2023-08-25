@@ -50,8 +50,8 @@ task simple_test(type: Test) {
         includeTags("simple")
     }
 }
-//task form_test(type: Test) {
-//    useJUnitPlatform {
-//        includeTags("form")
-//    }
-//}
+task remote_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("remote")
+    }
+}
