@@ -49,14 +49,14 @@ tasks.withType(Test) {
     }
 }
 
-//test {
-//    options {
-//        systemProperties(System.getProperties())
-//    }
-//        testLogging.showStandardStreams = true
-//        testLogging.exceptionFormat = 'full'
-//        useJUnitPlatform()
-//}
+test {
+    options {
+        systemProperties(System.getProperties())
+    }
+        testLogging.showStandardStreams = true
+        testLogging.exceptionFormat = 'full'
+        useJUnitPlatform()
+}
 
 
 task simple_test(type: Test) {
