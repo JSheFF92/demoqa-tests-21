@@ -17,11 +17,11 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 public class RemoteTestBase {
     @BeforeAll
     static void beforeAll() {
-        String browser = System.getProperty("browser", "firefox");//
+        String browser = System.getProperty("browser");
         Configuration.browser = browser;//
-        String browserSize = System.getProperty("browserSize", "1920x1080");
+        String browserSize = System.getProperty("browserSize");
         Configuration.browserSize = browserSize;//
-        String browserVersion = System.getProperty("browserVersion", "115.0");
+        String browserVersion = System.getProperty("browserVersion");
         Configuration.browserVersion = browserVersion;//
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
