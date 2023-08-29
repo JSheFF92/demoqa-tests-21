@@ -1,4 +1,4 @@
-package com.demoqa.simple;
+package com.demoqa.jenkinsSimple;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;

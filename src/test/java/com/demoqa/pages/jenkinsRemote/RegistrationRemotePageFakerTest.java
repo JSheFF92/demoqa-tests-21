@@ -1,5 +1,6 @@
-package com.demoqa.pages.form;
+package com.demoqa.pages.jenkinsRemote;
 
+import com.demoqa.pages.form.RemoteTestBase;
 import com.demoqa.pages.pages.RegistrationPage;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
