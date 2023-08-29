@@ -18,8 +18,8 @@ public class RemoteTestBase {
     @BeforeAll
     static void beforeAll() {
         String remoteDriverUrl = System.getProperty("remoteDriverUrl");
-        Configuration.browserSize = System.getProperty("browserSize");
         Configuration.baseUrl = "https://demoqa.com";
+        Configuration.browserSize = System.getProperty("browserSize");
         Configuration.browser = System.getProperty("browser");
         Configuration.browserVersion = System.getProperty("browserVersion");
         Configuration.pageLoadStrategy = "eager";
