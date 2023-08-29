@@ -17,12 +17,9 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 public class RemoteTestBase {
     @BeforeAll
     static void beforeAll() {
-        String browser = System.getProperty("browser");
-        Configuration.browser = browser;//
-        String browserSize = System.getProperty("browserSize");
-        Configuration.browserSize = browserSize;//
-        String browserVersion = System.getProperty("browserVersion");
-        Configuration.browserVersion = browserVersion;//
+        Configuration.browser = System.getProperty("browser");
+        Configuration.browserSize = System.getProperty("browserSize");
+        Configuration.browserVersion = System.getProperty("browserVersion");
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
