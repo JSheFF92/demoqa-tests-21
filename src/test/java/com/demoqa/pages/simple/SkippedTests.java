@@ -1,4 +1,4 @@
-package com.demoqa.jenkinsSimple;
+package com.demoqa.pages.simple;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Tag;
